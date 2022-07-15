@@ -16163,7 +16163,7 @@ span.plus {
     margin-bottom: 20px;
 }
 
-.map-content-9 form input,
+.map-content-9 form .twice input,
 .map-content-9 form textarea {
     background: var(--bg-color);
     border: 1px solid transparent;
@@ -16251,7 +16251,7 @@ span.plus {
     .map-content-9 {
         padding: 30px 20px;
     }
-    .map-content-9 form input,
+    .map-content-9 form .twice input,
     .map-content-9 form textarea {
         height: 54px;
     }

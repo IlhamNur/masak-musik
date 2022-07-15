@@ -14,19 +14,27 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('index', [
+        'title' => 'index'
+    ]);
 });
 
 Route::get('/contact', function () {
-    return view('contact');
+    return view('contact', [
+        'title' => 'contact'
+    ]);
 });
 
 Route::get('/courses', function () {
-    return view('courses');
+    return view('courses', [
+        'title' => 'courses'
+    ]);
 });
 
 Route::get('/about', function () {
-    return view('about');
+    return view('about', [
+        'title' => 'about'
+    ]);
 });
 
 Auth::routes();
