@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FestController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,6 +37,14 @@ Route::get('/about', function () {
         'title' => 'about'
     ]);
 });
+
+Route::get('/register-fest', function () {
+    return view('register-fest', [
+        'title' => 'register-fest'
+    ]);
+});
+
+Route::post('/register-fest', [FestController::class, 'store']);
 
 Auth::routes();
 

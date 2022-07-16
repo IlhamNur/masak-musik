@@ -11,6 +11,22 @@
                             <div class="banner-info">
                                 <div class="container">
                                     <div class="banner-info-bg">
+                                        <h5>Festival Band Hari Jadi Pati 2022</h5>
+                                        <p class="mt-4 pr-lg-4">Formulir pendaftaran festival band hari jadi Pati 2022</p>
+                                        <a class="btn btn-style btn-primary mt-sm-5 mt-4 mr-2" href="/register-fest">
+                                            Daftar</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </div>
+                <div class="item">
+                    <li>
+                        <div class="slider-info banner-view bg bg2">
+                            <div class="banner-info">
+                                <div class="container">
+                                    <div class="banner-info-bg">
                                         <h5>Free 1 jam jamming story 10X di akun IG yang sama</h5>
                                         <p class="mt-4 pr-lg-4">Rasakan kenyamanan latihan band di studio kami</p>
                                         <a class="btn btn-style btn-primary mt-sm-5 mt-4 mr-2" href="/about">
