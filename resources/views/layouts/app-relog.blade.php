@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>MASAK MUSIK STUDIO - Dashboard</title>
+    <title>MASAK MUSIK STUDIO</title>
     <link rel="shortcut icon" href="assets/images/Logo.ico">
 
     <!-- Custom fonts for this template-->

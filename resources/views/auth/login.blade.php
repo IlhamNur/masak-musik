@@ -62,13 +62,13 @@
                                         </a> -->
                                     </form>
                                     <hr>
-                                    <div class="text-center">
+                                    <!-- <div class="text-center">
                                         @if (Route::has('password.request'))
                                             <a class="small" href="{{ route('password.request') }}">
                                                 Forgot Password?
                                             </a>
                                         @endif
-                                    </div>
+                                    </div> -->
                                     <div class="text-center">
                                         <a class="small" href="/register">Create an Account!</a>
                                     </div>

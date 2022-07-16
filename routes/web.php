@@ -50,13 +50,13 @@ Route::get('/login', [App\Http\Controllers\Auth\LoginController::class, 'showLog
 
 Route::post('/login', [App\Http\Controllers\Auth\LoginController::class, 'login']);
 
-Route::post('/passsword/email', [App\Http\Controllers\Auth\ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
+Route::post('/password/email', [App\Http\Controllers\Auth\ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
 
-Route::get('/passsword/reset', [App\Http\Controllers\Auth\ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
+Route::get('/password/reset', [App\Http\Controllers\Auth\ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
 
-Route::post('/passsword/reset', [App\Http\Controllers\Auth\ResetPasswordController::class, 'reset'])->name('password.update');
+Route::post('/password/reset', [App\Http\Controllers\Auth\ResetPasswordController::class, 'reset'])->name('password.update');
 
-Route::get('/passsword/reset/{token}', [App\Http\Controllers\Auth\ResetPasswordController::class, 'showResetForm'])->name('password.reset');
+Route::get('/password/reset/{token}', [App\Http\Controllers\Auth\ResetPasswordController::class, 'showResetForm'])->name('password.reset');
 
 
 Route::middleware('auth')->group(function () {
