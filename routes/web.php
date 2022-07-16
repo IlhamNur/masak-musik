@@ -44,14 +44,32 @@ Route::get('/register-fest', function () {
     ]);
 });
 
-Route::get('/dashboard', function () {
-    return view('admin.index', [
-        'title' => 'dashboard'
-    ]);
-});
-
 Route::post('/register-fest', [FestController::class, 'store']);
 
-Auth::routes();
+Route::get('/login', [App\Http\Controllers\Auth\LoginController::class, 'showLoginForm'])->name('login');
 
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::post('/login', [App\Http\Controllers\Auth\LoginController::class, 'login']);
+
+Route::post('/passsword/email', [App\Http\Controllers\Auth\ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
+
+Route::get('/passsword/reset', [App\Http\Controllers\Auth\ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
+
+Route::post('/passsword/reset', [App\Http\Controllers\Auth\ResetPasswordController::class, 'reset'])->name('password.update');
+
+Route::get('/passsword/reset/{token}', [App\Http\Controllers\Auth\ResetPasswordController::class, 'showResetForm'])->name('password.reset');
+
+
+Route::middleware('auth')->group(function () {
+
+    Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+    Route::get('/register', [App\Http\Controllers\Auth\RegisterController::class, 'showRegistrationForm'])->name('register');
+
+    Route::post('/register', [App\Http\Controllers\Auth\RegisterController::class, 'register']);
+
+    Route::get('/passsword/confirm', [App\Http\Controllers\Auth\ConfirmPasswordController::class, 'showConfirmForm'])->name('password.confirm');
+
+    Route::post('/passsword/confirm', [App\Http\Controllers\Auth\ConfirmPasswordController::class, 'confirm']);
+    
+    Route::post('/logout', [App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
+});
