@@ -44,8 +44,14 @@ Route::get('/register-fest', function () {
     ]);
 });
 
+Route::get('/dashboard', function () {
+    return view('admin.index', [
+        'title' => 'dashboard'
+    ]);
+});
+
 Route::post('/register-fest', [FestController::class, 'store']);
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
