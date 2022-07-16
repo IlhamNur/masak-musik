@@ -61,7 +61,7 @@ Route::get('/passsword/reset/{token}', [App\Http\Controllers\Auth\ResetPasswordC
 
 Route::middleware('auth')->group(function () {
 
-    Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
 
     Route::get('/register', [App\Http\Controllers\Auth\RegisterController::class, 'showRegistrationForm'])->name('register');
 

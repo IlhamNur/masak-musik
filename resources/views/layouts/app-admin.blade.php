@@ -32,7 +32,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
                 <div class="sidebar-brand-icon">
                     <img src="assets/images/Logo.png" alt="MASMUS logo" title="MASMUS logo" style="height:40px;" />
                 </div>
@@ -50,14 +50,14 @@
             </li> -->
 
             <!-- Nav Item - Daftar Festival -->
-            <li class="nav-item">
+            <li class="nav-item {{ ($title === 'Festival Band') ? 'active' : '' }}">
                 <a class="nav-link" href="/dashboard">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Dashboard</span></a>
             </li>
 
             <!-- Nav Item - Register -->
-            <li class="nav-item">
+            <li class="nav-item {{ ($title === 'register') ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('register') }}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Register Admin</span></a>
@@ -223,15 +223,15 @@
                         </li>
 
                         <!-- Nav Item - Alerts -->
-                        <li class="nav-item dropdown no-arrow mx-1">
+                        <!-- <li class="nav-item dropdown no-arrow mx-1">
                             <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-bell fa-fw"></i>
+                                <i class="fas fa-bell fa-fw"></i> -->
                                 <!-- Counter - Alerts -->
-                                <span class="badge badge-danger badge-counter">3+</span>
-                            </a>
+                                <!-- <span class="badge badge-danger badge-counter">3+</span>
+                            </a> -->
                             <!-- Dropdown - Alerts -->
-                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                            <!-- <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="alertsDropdown">
                                 <h6 class="dropdown-header">
                                     Alerts Center
@@ -271,18 +271,18 @@
                                 </a>
                                 <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
                             </div>
-                        </li>
+                        </li> -->
 
                         <!-- Nav Item - Messages -->
-                        <li class="nav-item dropdown no-arrow mx-1">
+                        <!-- <li class="nav-item dropdown no-arrow mx-1">
                             <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-envelope fa-fw"></i>
+                                <i class="fas fa-envelope fa-fw"></i> -->
                                 <!-- Counter - Messages -->
-                                <span class="badge badge-danger badge-counter">7</span>
-                            </a>
+                                <!-- <span class="badge badge-danger badge-counter">7</span>
+                            </a> -->
                             <!-- Dropdown - Messages -->
-                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                            <!-- <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="messagesDropdown">
                                 <h6 class="dropdown-header">
                                     Message Center
@@ -339,13 +339,13 @@
                             </div>
                         </li>
 
-                        <div class="topbar-divider d-none d-sm-block"></div>
+                        <div class="topbar-divider d-none d-sm-block"></div> -->
 
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ auth()->user()->name }}</span>
                                 <img class="img-profile rounded-circle"
                                     src="assets2/img/undraw_profile.svg">
                             </a>
@@ -416,7 +416,10 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
+                    <form action="/logout" method="post">
+                        @csrf
+                        <button type="submit" class="btn btn-primary">Logout</button>    
+                    </form>
                 </div>
             </div>
         </div>

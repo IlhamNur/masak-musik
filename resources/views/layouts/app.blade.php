@@ -77,7 +77,11 @@
                         <!-- /search popup -->
                     </div>
                     <div class="top-quote mr-lg-2 text-center">
-                        <a href="{{ route('login') }}" class="btn login mr-2"><span class="fa fa-user"></span> login</a>
+                        @auth
+                            <a href="\dashboard" class="btn login mr-2"><span class="fa fa-user"></span> dashboard admin</a>
+                        @else
+                            <a href="{{ route('login') }}" class="btn login mr-2"><span class="fa fa-user"></span> login</a>
+                        @endauth
                     </div>
                 </div>
                 <!-- toggle switch for light and dark theme -->
